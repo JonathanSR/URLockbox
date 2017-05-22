@@ -22,18 +22,18 @@ describe "logged in user" do
       expect(page).to have_content("false")
     end
   end
-
-  it "uses ivalid url to create link" do
+describe "logged in user" do
+  it "uses invalid url to create link" do
     user= User.create(email:"sample@google.com", password:"password")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit("/")
 
-    fill_in "link[url]", with: "google.com/"
+    fill_in "link[url]", with: "google.com"
     fill_in "link[title]", with: "Google"
     click_on("Add Link")
-
     expect(current_path).to eq('/links')
     expect(page).to have_content("Url is not a valid URL")
   end
+end
 end

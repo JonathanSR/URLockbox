@@ -1,0 +1,13 @@
+<%=form_for @link do |f|%>
+  <%= f.label "URL:"%>
+  <%= f.text_field :url%>
+  <%= f.label "Title:"%>
+  <%= f.text_field :title%>
+
+  <% if type == "create" %>
+    <%= f.submit "Add Link"%>
+  <% else %>
+    <%= f.submit "Edit Link"%>
+  <% end %>
+  
+<% end %>
