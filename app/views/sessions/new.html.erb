@@ -1,5 +1,6 @@
-<h1>Login<h1>
+<h1 class="welcome">Login<h1>
 
+<div class="login_form">
 <%=form_for :session, url: login_path do |f|%>
   <%= f.label :email%>
   <%=f.email_field :email%>
@@ -8,3 +9,4 @@
   <%= f.submit "Submit"%>
 <% end %>
 <p>Don't have an account? <a href="/users/new">Sign Up by clicking here</p> 
+</div>
