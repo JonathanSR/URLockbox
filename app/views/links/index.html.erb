@@ -1,4 +1,20 @@
-<% if current_user %>
-  <%=link_to "Sign Out", logout_path%>
-<% else %>
-<% end%>
+<%=link_to "Sign Out", logout_path%>
+</br>
+</br>
+<%=form_for @link do |f|%>
+  <%= f.label "URL:"%>
+  <%= f.text_field :url%>
+  <%= f.label "Title:"%>
+  <%= f.text_field :title%>
+  <%= f.submit "Add Link"%>
+<% end %>
+<br>
+<br>
+<%current_user.links.each do |link|%>
+  <div class="container">
+    <p> Title: <%=link.title%></p>
+    <p> URL: <%=link.url%></p>
+    <p> Read? <%=link.read%></p>
+    <br>
+  </div>
+<% end %>
