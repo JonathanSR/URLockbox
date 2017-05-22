@@ -15,6 +15,7 @@
     <p> Title: <%=link.title%></p>
     <p> URL: <%=link.url%></p>
     <p> Read? <%=link.read%></p>
+    <%= link_to "Edit", edit_link_path(link)%>
     <br>
   </div>
 <% end %>
