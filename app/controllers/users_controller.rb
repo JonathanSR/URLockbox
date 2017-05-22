@@ -7,9 +7,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = "Successfully created account!"
       session[:user_id] = @user.id
       redirect_to root_path
     else
+      flash.now[:error] = @user.errors.full_messages.join('. ')
       render :new
     end
   end

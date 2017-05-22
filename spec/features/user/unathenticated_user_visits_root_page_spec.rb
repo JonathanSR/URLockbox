@@ -16,7 +16,7 @@ describe "unathenticated user" do
   end
 
   context "user clicks sign up" do
-    it "user gets taken to sign up page" do
+    it "user gets taken to sign up page and creates account" do
       visit login_path
 
       click_on("Sign Up by clicking here")
@@ -31,6 +31,21 @@ describe "unathenticated user" do
 
       expect(current_path).to eq("/")
       expect(page).to have_content("Successfully created account")
+    end
+
+    it "user enters taken email information" do
+      user_one = User.create(email:"sample@google.com", password:"password")
+
+      visit("/users/new")
+
+      fill_in "user[email]", with: "sample@google.com"
+      fill_in "user[password]", with: "password"
+      fill_in "user[password_confirmation]", with: "password"
+
+      click_on("Create Account")
+
+      expect(current_path).to eq("/users")
+      expect(page).to have_content("Email has already been taken")
     end
   end
 end
