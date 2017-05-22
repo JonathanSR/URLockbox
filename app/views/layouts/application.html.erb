@@ -8,6 +8,11 @@
 </head>
 <body>
 <div class="container">
+ <div style='text-align:center'>
+      <% flash.each do |type, message| %>
+        <%= content_tag :div, sanitize(message), class:"alert-#{type}" %>
+      <% end %> 
+</div>
   <%= yield %>
 </div>
 
