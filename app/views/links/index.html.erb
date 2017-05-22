@@ -1,13 +1,7 @@
 <%=link_to "Sign Out", logout_path%>
 </br>
 </br>
-<%=form_for @link do |f|%>
-  <%= f.label "URL:"%>
-  <%= f.text_field :url%>
-  <%= f.label "Title:"%>
-  <%= f.text_field :title%>
-  <%= f.submit "Add Link"%>
-<% end %>
+  <%= render partial: "/links/form", locals: { type: "create" } %>
 <br>
 <br>
 <%current_user.links.each do |link|%>
@@ -15,6 +9,8 @@
     <p> Title: <%=link.title%></p>
     <p> URL: <%=link.url%></p>
     <p> Read? <%=link.read%></p>
+    <%= button_to "Edit", edit_link_path(link), method:'get'%>
     <br>
   </div>
 <% end %>
+ 

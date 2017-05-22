@@ -4,9 +4,9 @@
   <%= f.label :Email%>
   <%=f.text_field :email%>
   <%= f.label :Password%>
-  <%=f.text_field :password%> 
-  <%= f.label :Password_Confirmation%>
-  <%=f.text_field :password_confirmation%>
+  <%=f.password_field :password%> 
+  <%= f.label :Confirm%>
+  <%=f.password_field :password_confirmation%>
   <%= f.submit "Create Account"%>
 <% end%>
 <p>Already a user? <a href="/login">Log in by clicking here</p>
