@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-  before_action :get_link, only: [:update, :edit]
+before_action :get_link, only: [:update, :edit]
+
   def index
     if !current_user
       redirect_to login_path
