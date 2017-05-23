@@ -4,13 +4,8 @@
   <%= render partial: "/links/form", locals: { type: "create" } %>
 <br>
 <br>
+<div id="all-links">
 <%current_user.links.each do |link|%>
-  <div class="container">
-    <p> Title: <%=link.title%></p>
-    <p> URL: <%=link.url%></p>
-    <p> Read? <%=link.read%></p>
-    <%= button_to "Edit", edit_link_path(link), method:'get'%>
-    <br>
-  </div>
+  <%= render partial: "/links/all_links", locals: {link: link}%>
 <% end %>
- 
+</div>
