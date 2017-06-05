@@ -6,6 +6,8 @@
   <%= render partial: "/links/form", locals: { type: "create" } %>
 <br>
 <br>
+<h3>Filters:</h3>
+<div id='link-filter'>By text:<input type = 'text' name='link-filter'></div>
 <div id="all-links">
 <%current_user.links.each do |link|%>
   <% if link.read %>
