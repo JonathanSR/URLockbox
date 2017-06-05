@@ -1,8 +1,8 @@
 $( document ).ready(function(){
-  $("body").on("click", ".mark-as-read", markAsRead)
+  $("body").on("click", ".mark-as-read", markAsUnread)
 })
  
-function markAsRead(e) {
+function markAsUnread(e) {
   e.preventDefault();
 
   var $link = $(this).parents('.link')[0];

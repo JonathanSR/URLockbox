@@ -8,6 +8,10 @@
 <br>
 <h3>Filters:</h3>
 <div id='link-filter'>By text:<input type = 'text' name='link-filter'></div>
+<button id="show-read">Show Read</button>
+<button id="show-unread">Show Unread</button>
+<br>
+<br>
 <div id="all-links">
 <%current_user.links.each do |link|%>
   <% if link.read %>
