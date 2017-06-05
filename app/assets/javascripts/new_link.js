@@ -20,6 +20,8 @@ var createLink = function(url, title){
     $("#all-links").prepend(response)
   })
   .fail(function(error) {
+    $("#url-errors").text(error.responseJSON[1]).fadeOut(2500);
+    $("#title-errors").text(error.responseJSON[0]).fadeOut(2500);
     console.log(error)
   });
 };
