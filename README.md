@@ -17,7 +17,7 @@ You will need to download version 46 of Firefox [here](https://www.softexia.com/
 
 If you already have Firefox and it's on a version more recent than 46, the easiest way to downgrade is to uninstall Firefox then install version 46.
 
-##Usage
+## Usage
 
 To run the test suite:
 ```shell
