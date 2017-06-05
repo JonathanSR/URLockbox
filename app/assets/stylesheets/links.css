@@ -7,3 +7,7 @@
   margin-right: 750px;
   padding-left: 10px;
 }
+
+.already-read{
+  text-decoration: line-through;
+}
