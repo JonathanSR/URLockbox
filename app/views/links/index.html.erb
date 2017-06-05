@@ -8,6 +8,11 @@
 <br>
 <div id="all-links">
 <%current_user.links.each do |link|%>
-  <%= render partial: "/links/all_links", locals: {link: link}%>
+  <% if link.read %>
+    <%= render partial: "/links/all_links", locals: {link: link}%>
+  <% else %>
+    <%= render partial: "/links/unread_links", locals: {link: link}%>
+  <% end %>
 <% end %>
 </div>
+ 

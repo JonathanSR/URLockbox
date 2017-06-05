@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe "logged in user" do
+describe "logged in user" do
   context "visits '/' page" do
     it "creates a new link" do
       user= User.create(email:"sample@google.com", password:"password")
