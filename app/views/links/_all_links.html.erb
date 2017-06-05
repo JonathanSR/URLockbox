@@ -2,7 +2,9 @@
   <p> Title: <%=link.title%></p>
   <p> URL: <%=link.url%></p>
   <p class='read-status'> Read? <%=link.read%></p>
+  <%= hidden_field_tag "link-id", link.id %>
   <%= button_to "Edit", edit_link_path(link), method:'get'%>
   <button class="mark-as-read">Mark as Read</button>
+  </br>
   </br>
 </div>
