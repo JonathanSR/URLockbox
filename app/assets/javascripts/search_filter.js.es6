@@ -7,8 +7,9 @@ $(document).ready(function(){
     var input = $('input[name=link-filter]').val().toLowerCase()
 
     $('.link').each(function(){
-      var dataTitle = $(this).context.children[0]
-      var dataUrl = $(this).context.children[1]
+      var dataTitle = $(this).context.children[3]
+      var dataUrl = $(this).context.children[4]
+      console.log(dataTitle)
 
       var linkTitle = $(dataTitle).find('link-title').context.innerText.toLowerCase()
       var linkUrl = $(dataUrl).find('link-url').context.innerText.toLowerCase()
