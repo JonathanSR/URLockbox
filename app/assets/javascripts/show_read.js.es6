@@ -6,12 +6,11 @@ $(document).ready(function(){
     })
 
     $('.link').each(function(){
-      var status = $(this).context.children[2]
+      var status = $(this).context.children[5]
       var realStatus = $(status).find('read-status').context.innerText
-
       if(realStatus == 'Read? false') {
         $(this).hide()
       };
     });
-  });
+  }); 
 });

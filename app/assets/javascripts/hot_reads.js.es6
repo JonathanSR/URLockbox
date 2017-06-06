@@ -29,7 +29,6 @@ var updateHotLinks = function(data){
       else if(hot_link == local_link){
         $hot.text("hot")
         $hot.css('background-color', 'orange')
-        console.log(hot_link)
       };
     };
   };
