@@ -1,4 +1,4 @@
-const host = "http://localhost:3000"
+const host = "https://protected-woodland-35657.herokuapp.com/"
 
 $( document ).ready(function(){
   $("body").on("click", ".mark-as-read", markAsRead)
