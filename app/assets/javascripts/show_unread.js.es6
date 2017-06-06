@@ -6,7 +6,7 @@ $(document).ready(function(){
     })
 
     $('.link').each(function(){
-      var status = $(this).context.children[2]
+      var status = $(this).context.children[5]
       var realStatus = $(status).find('unread-status').context.innerText
 
       if(realStatus == 'Read? true') {

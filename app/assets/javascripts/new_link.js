@@ -10,7 +10,7 @@ function newLink(){
 
 var createLink = function(url, title){
   var link = {'url': url,
-               'title': title}
+              'title': title}
   return $.ajax({
     url:"api/v1/links",
     method: "POST",

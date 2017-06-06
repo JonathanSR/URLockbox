@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "logged in user" do
-  context "visits '/' page" do
+  xcontext "visits '/' page" do
     it "creates a new link" do
       user= User.create(email:"sample@google.com", password:"password")
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -25,7 +25,7 @@ describe "logged in user" do
 end
 
 describe "logged in user" do
-  it "uses invalid url to create link" do
+  xit "uses invalid url to create link" do
     user= User.create(email:"sample@google.com", password:"password")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

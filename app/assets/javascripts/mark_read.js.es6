@@ -1,3 +1,5 @@
+const host = "http://localhost:3000"
+
 $( document ).ready(function(){
   $("body").on("click", ".mark-as-read", markAsRead)
 })
@@ -11,14 +13,26 @@ function markAsRead(e) {
     type: "PATCH",
     url: "/api/v1/links/" + linkId,
     data: { read: true },
-  }).then(updateLinkStatus)
+  }).then(updateLinkStatusRead)
     .fail(displayFailure);
 }
 
-function updateLinkStatus(link) {
+function updateLinkStatusRead(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text(link.read);
+  $(link).addClass('already-read')
+  var url = (link.url)
+  sendLink(url)
 }
 
 function displayFailure(failureData){
   console.log("FAILED attempt to update Link: " + failureData.responseText);
+}
+
+var sendLink = function(url){
+  var link = { 'url': url }
+  return $.ajax({
+    method: 'POST',
+    url: host + '/api/v1/links',
+    data: link
+  })
 }
