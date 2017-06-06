@@ -1,10 +1,12 @@
 <div class="container link already-read data-link-id=<%=link.id%>">
+  <p class="hot"><p>
+  <p class="mild">test</p>
   <p class="link-title"> Title: <%=link.title%></p>
   <p class="link-url"> URL: <%=link.url%></p>
   <p class='read-status'> Read? <%=link.read%></p>
   <%= hidden_field_tag "link-id", link.id %>
   <%= button_to "Edit", edit_link_path(link), method:'get'%>
-  <button class="mark-as-read">Mark as Unread</button>
+  <button class="mark-as-unread">Mark as Unread</button>
   </br>
   </br>
 </div>

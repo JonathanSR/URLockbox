@@ -1,6 +1,7 @@
 <div class="container link data-link-id=<%=link.id%>">
-  <p> Title: <%=link.title%></p>
-  <p> URL: <%=link.url%></p>
+  <p class="hot">test<p>
+  <p class="link-title"> Title: <%=link.title%></p>
+  <p class='link-url'> URL: <%=link.url%></p>
   <p class='read-status'> Read? <%=link.read%></p>
   <%= hidden_field_tag "link-id", link.id %>
   <%= button_to "Edit", edit_link_path(link), method:'get'%>
