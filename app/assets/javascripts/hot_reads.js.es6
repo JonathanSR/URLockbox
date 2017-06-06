@@ -1,4 +1,5 @@
-const host = "https://protected-woodland-35657.herokuapp.com/"
+// const host = "https://protected-woodland-35657.herokuapp.com/"
+const host ='http://localhost:3000/'
 
 var getLinks = function(){
   return $.ajax({

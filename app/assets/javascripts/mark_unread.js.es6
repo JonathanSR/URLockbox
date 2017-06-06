@@ -1,6 +1,6 @@
 $( document ).ready(function(){
   $("body").on("click", ".mark-as-unread", markAsUnread)
-})
+});
  
 function markAsUnread(e) {
   e.preventDefault();
@@ -12,15 +12,16 @@ function markAsUnread(e) {
     type: "PATCH",
     url: "/api/v1/links/" + linkId,
     data: { read: false },
-  }).then(updateLinkStatus)
+    })
+    .then(updateLinkStatus)
     .fail(displayFailure);
-}
+    $($link).removeClass('already-read')
+};
 
 function updateLinkStatus(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text(link.read);
-  $(link).removeClass('already-read')
-}
+};
 
 function displayFailure(failureData){
   console.log("FAILED attempt to update Link: " + failureData.responseText);
-}
+};
