@@ -2,8 +2,8 @@ $(document).ready(function(){
   $('#link-filter').on('keyup', function(){
 
     $('.link').each(function(){
-      $(this).show
-    })
+      $(this).show()
+    });
     var input = $('input[name=link-filter]').val().toLowerCase()
 
     $('.link').each(function(){
