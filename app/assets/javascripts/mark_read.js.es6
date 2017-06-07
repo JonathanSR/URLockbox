@@ -22,6 +22,8 @@ function markAsRead(e) {
 
 function updateLinkStatusRead(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text(link.read);
+  $(`.link[data-link-id=${link.id}]`).find(".mark-as-read").removeClass('mark-as-read').addClass('mark-as-unread').text("Mark as Unread")
+
   var url = (link.url)
   sendLink(url)
 };

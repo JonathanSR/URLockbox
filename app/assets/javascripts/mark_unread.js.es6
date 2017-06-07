@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-  $("body").on("click", ".mark-as-unread", markAsUnread)
+  $(".mark-as-unread").on("click", markAsUnread)
 });
  
 function markAsUnread(e) {
@@ -20,6 +20,8 @@ function markAsUnread(e) {
 
 function updateLinkStatus(link) {
   $(`.link[data-link-id=${link.id}]`).find(".read-status").text(link.read);
+  $(`.link[data-link-id=${link.id}]`).find(".mark-as-unread").removeClass('mark-as-unread').addClass('mark-as-read').text("Mark as Read")
+  
 };
 
 function displayFailure(failureData){
