@@ -4,7 +4,7 @@ class Api::V1::LinksController < ApplicationController
     link = current_user.links.new(new_links_params)
     
     if link.save
-      render partial: "links/all_links", locals: {link: link}, layout: false
+      render partial: "links/unread_links", locals: {link: link}, layout: false
     else
       render json: link.errors.full_messages, status: 400
     end
