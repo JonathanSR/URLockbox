@@ -3,7 +3,7 @@ const host = "https://protected-woodland-35657.herokuapp.com/"
 var getLinks = function(){
   return $.ajax({
     method: 'GET',
-    url: host + '/api/v1/links'
+    url: host + 'api/v1/links'
   })
   .done(updateHotLinks)
   .fail(function(error){

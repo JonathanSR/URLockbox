@@ -36,7 +36,7 @@ var sendLink = function(url){
   var link = { 'url': url }
   return $.ajax({
     method: 'POST',
-    url: host + '/api/v1/links',
+    url: host + 'api/v1/links',
     data: link
   });
 };
